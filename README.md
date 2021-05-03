@@ -1,3 +1,3 @@
 # python4everybody
 
-solving all exercises from the python4e book.
+Learning **Python** and solving all exercises from the python for everybody book. :computer
