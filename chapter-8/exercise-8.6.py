@@ -15,28 +15,19 @@ while True:
 		break
 		
 	try:
-		#inp_num = input("Enter a number: ")
 		value = float(inp_num)
 	except:
 		print("You have entered a string! Please enter number.")
 		continue
-		
-		
-	#if inp_num == "done":
-	#	break
-	
-	#value = float(inp_num)
 	
 	if not value in num_list:
 		num_list.append(value)
 	else:
 		print("Number already in list.")
 		continue
-		
-print(num_list)
+	
 print("Maximum:",max(num_list))
 print("Minimum:",min(num_list))
-print("Average:",sum(num_list) / len(num_list))
 
 
 
