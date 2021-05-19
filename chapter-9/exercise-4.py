@@ -4,7 +4,11 @@
 # program to fugure out who has the most messages in the file.
 
 f_name = input("Enter the file name: ")
-f_hand = open(f_name)
+try:
+	f_hand = open(f_name)
+except:
+	print("File cannot be opened.", f_name)
+	exit()
 
 d = dict()
 largest = None
