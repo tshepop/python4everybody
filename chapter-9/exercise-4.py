@@ -11,8 +11,6 @@ except:
 	exit()
 
 d = dict()
-largest = None
-big_word = None
 
 for line in f_hand:
 	line = line.rstrip()
@@ -30,12 +28,15 @@ for line in f_hand:
 		d[words[1]] = 1
 	else:
 		d[words[1]] += 1
-		
-	for word, count in d.items():
-		#print(word, count)
-		if largest is None or count > largest:
-			big_word = word
-			largest = count
+
+largest = None
+big_word = None
+	
+for word, count in d.items():
+	#print(word, count)
+	if largest is None or count > largest:
+		big_word = word
+		largest = count
 			
 print(big_word, largest)
 
