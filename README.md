@@ -12,4 +12,5 @@ This is my journey of learning python. I will be solving the books exercises. Ha
 * Chapter 10 Tuples
 * Chapter 11 Regular expressions
 ## Technologies
+![Powered by](https://img.shields.io/badge/Powered%20by-python%20%203.9-blue)
 * Python 3.9
