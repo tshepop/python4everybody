@@ -1,2 +1,0 @@
-Today is very hot
-And I am learning python
