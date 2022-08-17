@@ -1,6 +1,4 @@
-import resource
 import socket
-
 
 """
 Change the socket program socket1.py to prompt the user for the
@@ -12,19 +10,16 @@ enters an improperly formatted or non-existent URL.
 Sample Data: romeo.txt
 """
 
-
 try:
     user_url = input("Enter url - ")
     hostname = user_url.split('/')
     # print(host)
     HOST = hostname[2]
-    # PORT = 80
-    PORT = 8000
-    web_source = hostname[3]
+    PORT = 80
 
     my_sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
     my_sock.connect((HOST, PORT))
-    cmd = "GET " + web_source + " HTTP/1.0\r\n\r\n"
+    cmd = "GET " + user_url + " HTTP/1.0\r\n\r\n"
     my_sock.sendall(cmd.encode())
 
     while True:
@@ -36,4 +31,4 @@ try:
     my_sock.close()
 
 except:
-    print("The web-address is incorrect or does not exist.")
+    print("Check web-address is incorrect or does not exist.")
