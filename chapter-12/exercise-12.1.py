@@ -12,13 +12,22 @@ Sample Data: romeo.txt
 
 try:
     user_url = input("Enter url - ")
-    hostname = user_url.split('/')
+    hostname = user_url.split("/")
     # print(host)
     HOST = hostname[2]
     PORT = 80
 
+    # For testing purposes using http.server
+
+    # user_url equals to http://0.0.0.0/romeo.txt
+    # hostname = user_url.split("/")
+    # HOST = hostname[2]
+    # PORT = 8000
+    # web_resource = hostname[3]
+
     my_sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
     my_sock.connect((HOST, PORT))
+    # cmd = "GET " + web_resource + " HTTP/1.0\r\n\r\n" use this line only with localhost
     cmd = "GET " + user_url + " HTTP/1.0\r\n\r\n"
     my_sock.sendall(cmd.encode())
 
