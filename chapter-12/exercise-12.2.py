@@ -36,8 +36,8 @@ try:
 
         # print(type(retrieve_char))  # verify if variable still holds bytes data
 
-        # retrieve_char[:500]
-        # retrieve_char[:1500]
+        # retrieve_char = retrieve_char[:500]
+        # retrieve_char = retrieve_char[:1500]
         retrieve_char = retrieve_char[:3000]
 
     print(retrieve_char.decode().strip())
