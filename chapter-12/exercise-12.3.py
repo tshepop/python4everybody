@@ -1,6 +1,7 @@
 import urllib.request
 import urllib.parse
 import urllib.error
+import ssl
 
 """
 Use urllib to replicate the previous exercise of (1) retrieving the
@@ -11,8 +12,13 @@ this exercise, simply show the first 3000 characters of the document contents.
 sample data: romeo-full.txt
 """
 
+# Ignore SSL certificate errors
+ctx = ssl.create_default_context()
+ctx.check_hostname = False
+ctx.verify_mode = ssl.CERT_NONE
+
 user_url = input("Enter url: ")
-fhand = urllib.request.urlopen(user_url).read()
+fhand = urllib.request.urlopen(user_url, context=ctx).read()
 
 count = 0
 words = b""
