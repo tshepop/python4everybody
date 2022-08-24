@@ -13,6 +13,7 @@ pages.
 
 install BeautifulSoup or download bs4 folder
 """
+count = 0
 
 ctx = ssl.create_default_context()
 ctx.check_hostname = False
@@ -24,4 +25,7 @@ soup = BeautifulSoup(user_html, "html.parser")
 
 
 for tag in soup.find_all("p"):
-    print(tag)
+    # print(tag)
+    count = count + 1
+
+print("Number of tags", count)
