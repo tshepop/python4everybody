@@ -19,4 +19,9 @@ ctx.check_hostname = False
 ctx.verify_mode = ssl.CERT_NONE
 
 user_url = input("Enter Web Address: ")
-user_html = urllib.request.urlopen(user_url, context=ctx)
+user_html = urllib.request.urlopen(user_url, context=ctx).read()
+soup = BeautifulSoup(user_html, "html.parser")
+
+
+for tag in soup.find_all("p"):
+    print(tag)
