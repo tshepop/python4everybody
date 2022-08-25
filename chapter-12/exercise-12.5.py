@@ -24,5 +24,10 @@ while True:
     if(len(data) < 1):
         break
     print(data.decode())
+    lines = lines + data
 
 my_sock.close()
+
+# find lines following the header
+pos = lines.find(b"\r\n\r\n")
+print("Header:", pos)
