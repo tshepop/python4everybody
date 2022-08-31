@@ -1,3 +1,4 @@
+from distutils.log import info
 import urllib.request
 import urllib.parse
 import urllib.error
@@ -21,3 +22,7 @@ address_inp = input("Enter latitude and longitude: ")
 location = geolocator.reverse(address_inp)
 loc_dict = location.raw
 print(type(loc_dict))
+
+# convert python obj into json string
+info = json.dumps(loc_dict, indent=4)
+print(info)
